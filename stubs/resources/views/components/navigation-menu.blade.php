@@ -132,15 +132,15 @@
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="flex items-center px-4">
                 <div>
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                    <div class="font-medium text-base text-gray-800">{{ auth()->user()->name }}</div>
+                    <div class="font-medium text-sm text-gray-500">{{ auth()->user()->email }}</div>
                 </div>
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-jet-responsive-nav-link href="{{ url('/') }}/shibboleth-logout">
+                <x-responsive-nav-link href="{{ url('/') }}/shibboleth-logout">
                     {{ __('Logout') }}
-                </x-jet-responsive-nav-link>
+                </x-responsive-nav-link>
             </div>
         </div>
     </div>

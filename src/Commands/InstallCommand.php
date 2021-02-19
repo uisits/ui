@@ -34,29 +34,30 @@ class InstallCommand extends Command
         // NPM Packages...
         $this->updateNodePackages(function ($packages) {
             return [
-                    'autoprefixer' => '^10.1.0',
-                    'postcss' => '^8.2.1',
-                    'postcss-import' => '^12.0.1',
-                    'sass' => '^1.32.4',
+                    'laravel-mix' => '^4.0.7',
+                    'laravel-mix-tailwind' => '^0.1.1',
+                    'sass' => '^1.29.0',
+                    'sass-loader' => '^7.1.0',
                     'vue-loader' => '^15.9.6',
-                    'lodash' => '^4.17.19',
-                    'sass-loader' => '^10.1.1',
-                    'deepmerge' => '^2.2.1',
-                    'tailwindcss' => '^2.0.2',
+                    'material-design-icons-iconfont' => '^4.0.5',
+                    'lodash' => '^4.17.20',
+                    'tailwindcss' => '^1.9.6',
                     'vue' => '^2.6.12',
-                    'resolve-url-loader' => '^3.1.0',
+                    'resolve-url-loader' => '^2.3.1',
                     'vue-template-compiler' => '^2.6.12',
-                    'vuetify' => '^2.4.2'
+                    'vuetify' => '^2.3.17',
+                    'alpinejs' => '^2.8.0'
                 ] + $packages;
         });
 
         // Composer Packages...
         $this->updateComposerPackages(function ($packages) {
             return [
-                    "uabookstores/laravel-shibboleth" => "^3.3",
+                    "uabookstores/laravel-shibboleth" => "3.1.1",
                     "adldap2/adldap2-laravel" => "^6.0",
-                    "yajra/laravel-oci8" => "^8.0",
-                    "laravel/passport" => "^10.0.1"
+                    "yajra/laravel-oci8" => "^7.0",
+                    "laravel/passport" => "^8.4",
+                    "fruitcake/laravel-cors" => "^2.0",
                 ]
                 + $packages;
         }, false);
@@ -74,6 +75,11 @@ class InstallCommand extends Command
             app_path('Http/Controllers')
         );
 
+        // Copy Blade View PHP files
+        (new Filesystem)->ensureDirectoryExists(app_path('View'));
+        (new Filesystem)->ensureDirectoryExists(app_path('View/Components'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/View', app_path());
+
         // Copy Api Controllers
         (new Filesystem)->ensureDirectoryExists(app_path('Http/Controllers/Api'));
         (new Filesystem)->copyDirectory(
@@ -82,11 +88,7 @@ class InstallCommand extends Command
         );
 
         // Copy Models
-        (new Filesystem)->ensureDirectoryExists(app_path('Models'));
-        (new Filesystem)->copyDirectory(
-            __DIR__.'/../../stubs/Models',
-            app_path('Models')
-        );
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/Models', app_path());
 
         // Copy Middlewares
         (new Filesystem)->ensureDirectoryExists(app_path('Http/Middleware'));

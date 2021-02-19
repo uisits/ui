@@ -1,5 +1,5 @@
 <?php
-return [
+return array(
 
     /*
     |--------------------------------------------------------------------------
@@ -14,7 +14,6 @@ return [
     'idp_login' => '/Shibboleth.sso/Login',
     'idp_logout' => '/Shibboleth.sso/Logout',
     'authenticated' => '/',
-
 
     /*
     |--------------------------------------------------------------------------
@@ -31,30 +30,30 @@ return [
     |
      */
 
-    'emulate_idp' => env('EMULATE_IDP', false),
-    'emulate_idp_users' => [
-        'admin' => [
-            'Shib-cn' => 'Admin User',
-            'Shib-mail' => 'admin@email.arizona.edu',
-            'Shib-givenName' => 'Admin',
-            'Shib-sn' => 'User',
-            'Shib-emplId' => 'admin',
-        ],
-        'staff' => [
-            'Shib-cn' => 'Staff User',
-            'Shib-mail' => 'staff@email.arizona.edu',
-            'Shib-givenName' => 'Staff',
-            'Shib-sn' => 'User',
-            'Shib-emplId' => 'staff',
-        ],
-        'user' => [
-            'Shib-cn' => 'User User',
-            'Shib-mail' => 'user@email.arizona.edu',
-            'Shib-givenName' => 'User',
-            'Shib-sn' => 'User',
-            'Shib-emplId' => 'user',
-        ],
-    ],
+    'emulate_idp' => false,
+    'emulate_idp_users' => array(
+        'admin' => array(
+            'iTrustUIN' => 'admin',
+            'uid' => 'Admin User',
+            'givenName' => 'Admin',
+            'sn' => 'User',
+            'mail' => 'admin@uis.edu',
+        ),
+        'staff' => array(
+            'iTrustUIN' => 'staff',
+            'uid' => 'Staff User',
+            'givenName' => 'Staff',
+            'sn' => 'User',
+            'mail' => 'staff@uis.edu',
+        ),
+        'user' => array(
+            'iTrustUIN' => 'user',
+            'uid' => 'User User',
+            'givenName' => 'User',
+            'sn' => 'User',
+            'mail' => 'user@uis.edu',
+        ),
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +64,7 @@ return [
     |
      */
 
-    'entitlement' => 'Shib-isMemberOf',
+    'entitlement' => 'isMemberOf',
 
     'user' => [
         // fillable user model attribute => server variable
@@ -75,9 +74,6 @@ return [
         'last_name' => 'sn',
         'uin' => 'iTrustUIN',
     ],
-
-    //The user model field (from the user array above) that should be used for authentication
-    'user_authentication_field' => 'email',
 
     /*
     |--------------------------------------------------------------------------
@@ -89,6 +85,7 @@ return [
      */
 
     'add_new_users' => true, // Should new users be added automatically if they do not exist?
+
     /*
     |--------------------------------------------------------------------------
     | JWT Auth
@@ -102,4 +99,4 @@ return [
      */
 
     'jwtauth' => env('JWTAUTH', false),
-];
+);
