@@ -1,0 +1,35 @@
+{
+    "name": "uisits/ui",
+    "description": "A package to scaffold UI for UIS-ITS laravel applications.",
+    "type": "library",
+    "keywords": ["skeleton", "its", "uis", "uis-its"],
+    "authors": [
+        {
+            "name": "Chinwal Prasad",
+            "email": "pchin3@uis.edu"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^7.2.5|^8.0",
+        "illuminate/console": "^8.0",
+        "illuminate/filesystem": "^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Uisits\\Ui\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Uisits\\Ui\\UiServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
