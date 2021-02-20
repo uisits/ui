@@ -36,7 +36,6 @@ class UserApiController extends Controller
         $user->email = $userFormRequest->email;
         $user->name = $userFormRequest->name;
         $user->save();
-        $user->syncRoles($userFormRequest->roles);
         return new UserResource($user);
     }
 
@@ -54,7 +53,6 @@ class UserApiController extends Controller
             $userFormRequest->toArray()
         );
 
-        $user->syncRoles($userFormRequest->roles);
         return new UserResource($user);
     }
 
