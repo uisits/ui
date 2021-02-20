@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserFormRequest;
 use App\Http\Resources\UserResource;
-use App\User;
-use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserApiController extends Controller
 {
@@ -36,7 +35,6 @@ class UserApiController extends Controller
         $user->email = $userFormRequest->email;
         $user->name = $userFormRequest->name;
         $user->save();
-        $user->syncRoles($userFormRequest->roles);
         return new UserResource($user);
     }
 
@@ -53,8 +51,6 @@ class UserApiController extends Controller
             ['id' => $id],
             $userFormRequest->toArray()
         );
-
-        $user->syncRoles($userFormRequest->roles);
         return new UserResource($user);
     }
 

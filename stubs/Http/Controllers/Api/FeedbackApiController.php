@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Feedback;
+use App\Models\Feedback;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FeedbackFormRequest;
 use App\Http\Resources\FeedbackResource;
-use App\User;
-use Illuminate\Http\Request;
+use App\Models\User;
 
 class FeedbackApiController extends Controller
 {
