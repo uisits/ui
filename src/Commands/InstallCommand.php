@@ -34,15 +34,19 @@ class InstallCommand extends Command
         // NPM Packages...
         $this->updateNodePackages(function ($packages) {
             return [
-                    'laravel-mix' => '^4.0.7',
+                    'laravel-mix' => '^5.0.1',
                     'laravel-mix-tailwind' => '^0.1.1',
                     'sass' => '^1.29.0',
+                    'cross-env' => '^7.0',
                     'sass-loader' => '^7.1.0',
                     'vue-loader' => '^15.9.6',
                     'material-design-icons-iconfont' => '^4.0.5',
                     'lodash' => '^4.17.20',
-                    'tailwindcss' => '^1.9.6',
+                    'tailwindcss' => '^2.0.3',
+                    'postcss' => '^8.2.1',
+                    'postcss-import' => '^12.0.1',
                     'vue' => '^2.6.12',
+                    'deepmerge' => '^2.2.1',
                     'resolve-url-loader' => '^2.3.1',
                     'vue-template-compiler' => '^2.6.12',
                     'vuetify' => '^2.3.17',
