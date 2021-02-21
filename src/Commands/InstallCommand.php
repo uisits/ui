@@ -61,6 +61,10 @@ class InstallCommand extends Command
                 + $packages;
         }, false);
 
+        $this->comment("Installing Laravel Passport");
+        $this->call('passport:install');
+        $this->info('Passport installation successful');
+
         // Copy configs files to config directory
         (new Filesystem)->copyDirectory(
             __DIR__.'/../../stubs/config',
