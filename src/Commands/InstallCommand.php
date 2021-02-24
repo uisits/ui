@@ -147,6 +147,10 @@ class InstallCommand extends Command
             resource_path()
         );
 
+        // Copy Helper file
+        (new Filesystem)->ensureDirectoryExists(app_path('Helpers'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/Helpers', app_path('Helpers'));
+
         // Copy routes
         copy(__DIR__.'/../../stubs/routes/web.php', base_path('routes/web.php'));
         copy(__DIR__.'/../../stubs/routes/api.php', base_path('routes/api.php'));
