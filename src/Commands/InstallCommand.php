@@ -123,6 +123,13 @@ class InstallCommand extends Command
             app_path('Http/Traits')
         );
 
+        // Copy View Components (Not Vue Components)
+        (new Filesystem)->ensureDirectoryExists(app_path('View/Components'));
+        (new Filesystem)->copyDirectory(
+            __DIR__.'/../../stubs/View/Components',
+            app_path('View/Components')
+        );
+
         // Copy Assets
         (new Filesystem)->ensureDirectoryExists(public_path());
         (new Filesystem)->copyDirectory(
