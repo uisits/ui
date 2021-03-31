@@ -46,7 +46,8 @@ class InstallCommand extends Command
                     'vue' => '^2.6.12',
                     'resolve-url-loader' => '^3.1.0',
                     'vue-template-compiler' => '^2.6.12',
-                    'vuetify' => '^2.4.2'
+                    'vuetify' => '^2.4.2',
+                    'alpinejs' => '^2.8.0'
                 ] + $packages;
         });
 

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Laravel\Jetstream\HasTeams;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Notifications\Notifiable;
@@ -13,7 +12,6 @@ class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
-    use HasTeams;
     use Notifiable;
 
     /**
