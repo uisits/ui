@@ -12,7 +12,7 @@ return [
     */
 
     'idp_login' => '/Shibboleth.sso/Login',
-    'idp_logout' => '/Shibboleth.sso/Logout',
+    'idp_logout' => '/Shibboleth.sso/Logout?return='.env('LOGOUT_URL'),
     'authenticated' => '/',
 
 
