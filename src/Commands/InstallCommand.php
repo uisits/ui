@@ -72,6 +72,12 @@ class InstallCommand extends Command
             config_path()
         );
 
+        // Copy migrations to database/migrations
+        copy(
+            __DIR__.'/../../stubs/migrations/2014_10_12_000000_create_users_table.php',
+            base_path('database/migrations/2014_10_12_000000_create_users_table.php')
+        );
+
         // Copy Controllers
         (new Filesystem)->ensureDirectoryExists(app_path('Http/Controllers'));
         (new Filesystem)->copyDirectory(
