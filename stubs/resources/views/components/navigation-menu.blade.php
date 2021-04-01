@@ -138,9 +138,9 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-jet-responsive-nav-link href="{{ url('/') }}/shibboleth-logout">
+                <x-responsive-nav-link href="{{ url('/') }}/shibboleth-logout">
                     {{ __('Logout') }}
-                </x-jet-responsive-nav-link>
+                </x-responsive-nav-link>
             </div>
         </div>
     </div>
