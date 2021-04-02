@@ -122,7 +122,7 @@
             <x-responsive-nav-link href="{{ url('/') }}/help">
                 {{ __('Help') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ url('/') }}/comments/create">
+            <x-responsive-nav-link href="{{ url('/') }}/feedback">
                 {{ __('Feedback') }}
             </x-responsive-nav-link>
             @endcan
