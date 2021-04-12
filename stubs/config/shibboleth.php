@@ -65,7 +65,7 @@ return [
     |
      */
 
-    'entitlement' => 'Shib-isMemberOf',
+    'entitlement' => 'isMemberOf',
 
     'user' => [
         // fillable user model attribute => server variable
