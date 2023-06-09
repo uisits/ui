@@ -10,13 +10,24 @@
         }
     ],
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "require": {
         "php": "^7.2.5|^8.0",
-        "illuminate/console": "^8.0",
-        "illuminate/filesystem": "^8.0",
-        "illuminate/support": "^8.0"
+        "illuminate/console": "^9.0|^10.9",
+        "illuminate/filesystem": "^9.0|^10.9",
+        "illuminate/support": "^9.0|^10.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.10",
+        "pestphp/pest": "^1.0|^2.6",
+        "pestphp/pest-plugin-laravel": "^1.0|^2.0",
+        "mockery/mockery": "^1.5",
+        "phpunit/phpunit": "^9.0|^10.1",
+        "orchestra/testbench": "^7.24|^8.5"
     },
     "autoload": {
         "psr-4": {

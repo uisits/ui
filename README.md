@@ -61,7 +61,7 @@ This package helps in separating base laravel application in docker build step. 
             "laravel/passport": "^8.4",
             "laravel/tinker": "^2.0",
             "php": "^7.2.5|^8.0",
-            "uabookstores/laravel-shibboleth": "3.1.1",
+            "uabookstores/laravel-oidc": "3.1.1",
             "uisits/ui": "^7.0",
             "yajra/laravel-oci8": "^7.0"
         },
